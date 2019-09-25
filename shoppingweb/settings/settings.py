@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'accounts',
     'goods',
     'orders',
-    'payments',
+    'useraction',
     'shopcarts',
     'rest_framework',           # now django knows you will use it in your project.
 

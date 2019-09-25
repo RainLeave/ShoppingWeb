@@ -1,4 +1,6 @@
-from django.db import Model
+from django.db import models
+from django.contrib.auth import get_user_model
+User = get_user_model()
 
 
 class OrderInfo(models.Model):
@@ -29,7 +31,6 @@ class OrderInfo(models.Model):
 
     def __str__(self):
         return str(self.order_sn)
-
 
     class OrderGoods(models.Model):
         """订单商品详情"""

@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'accounts',
     'goods',
     'orders',
-    'payments',
+    'useraction',
     'shopcarts',
     'rest_framework',
     'lufei', # now django knows you will use it in your project.
@@ -146,6 +146,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')  # 'media' is my media folder
 
 # 第二种方法
 STATIC_URL = '/static/'
+# STATIC_URL = '/api/static/'
+
 
 # Add for Vue.js
 # Configure the static file search path

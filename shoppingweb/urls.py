@@ -24,23 +24,23 @@ from orders import views
 from django.conf import settings
 from django.conf.urls.static import static
 from lufei import views
+from accounts.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
     # Add for rest framework
-    url(r'^api-auth/', include('rest_framework.urls')),
+    path(r'^api-auth/', include('rest_framework.urls')),
     # Add for vue
     # url(r'^$', TemplateView.as_view(template_name="index.html")),
-
-
-    # url(r'^api/v1/accounts/', include('accounts.urls')), # include 路由转发
+    url(r'^api/v1/accounts/', include('accounts.urls')),  # include 路由转发
+    # order
+    # path(r'^dog/', views.DogView.as_view()),
+    # 用户认证 基于token 如果登录成功则url可以访问，返回元组，否则报错
+    # path(r'^login', views.MyAuthentication),
 
     # test
-    url(r'^api/', include('accounts.urls', namespace='shop-acccounts')),
-    # order
-    url(r'^dog/', views.DogView.as_view()),
-    # 用户认证 基于token 如果登录成功则url可以访问，返回元组，否则报错
-    url(r'^login', views.MyAuthentication)
+    # path(r'^api/v1/accounts/', include('accounts.urls', namespace='shop-acccounts')),
 
 ]
 

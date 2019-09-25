@@ -3,13 +3,18 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-
+import Vuex from 'vuex'
+import axios from 'axios'
 // Element-UI
 import ElementUI from 'element-ui'
 import VueResource from 'vue-resource'
 import 'element-ui/lib/theme-chalk/index.css'
-// Vue.use(ElementUI)
 Vue.config.productionTip = false
+
+// Vue.use(ElementUI)
+Vue.use(Vuex)
+Vue.prototype.$axios = axios // /将axios挂载在Vue实例原型上
+
 Vue.use(ElementUI)
 Vue.use(VueResource)
 /* eslint-disable no-new */

@@ -10,8 +10,17 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
-
+    // proxyTable: {}, // vue跨域配置在这里
+    proxyTable: {
+      '/api/v1/accounts': {
+        // 测试环境
+        target: 'http://127.0.0.1:8000/api/v1/accounts/test/',  // 接口域名
+        changeOrigin: true,  //是否跨域
+        pathRewrite: {
+          '^/api/v1/accounts': ''   //需要rewrite重写的,
+        }
+      }
+    },
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined

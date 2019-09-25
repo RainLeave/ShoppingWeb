@@ -35,7 +35,7 @@ export default {
   },
   methods: {
     addBook () {
-      this.$http.get('http://127.0.0.1:8000/api/add_book?book_name=' + this.input)
+      this.$http.get('http://127.0.0.1:8000/api/v1/accounts/add_book?book_name=' + this.input)
         .then((response) => {
           var res = JSON.parse(response.bodyText)
           if (res.error_num === 0) {
@@ -47,7 +47,7 @@ export default {
         })
     },
     showBooks () {
-      this.$http.get('http://127.0.0.1:8000/api/show_books')
+      this.$http.get('http://127.0.0.1:8000/api/v1/accounts/show_books')
         .then((response) => {
           var res = JSON.parse(response.bodyText)
           console.log(res)

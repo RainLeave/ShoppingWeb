@@ -18,6 +18,7 @@ import Router from 'vue-router'
 import home from '@/components/Home'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import User from '@/components/User'
 
 Vue.use(ElementUI)
 Vue.use(Router)
@@ -28,6 +29,11 @@ export default new Router({
       path: '/',
       name: 'home',
       component: home
+    },
+    {
+      path: '/user',
+      name: 'User',
+      component: User
     }
   ]
 })

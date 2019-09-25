@@ -41,9 +41,9 @@ INSTALLED_APPS = [
     'accounts',
     'goods',
     'orders',
-    'payments',
+    'useraction',
     'shopcarts',
-     'lufei'
+    'lufei',
 ]
 
 MIDDLEWARE = [
